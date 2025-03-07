@@ -39,17 +39,27 @@ const AdminEditProduct = ({
       })
   }
 
-  const handleUploadProduct = async(e) => {
-    const file = e.target.files[0]
-    const uploadImageCloudinary = await uploadImage(file)
+  const handleUploadProduct = async (e) => {
+    const file = e.target.files[0];
 
-    setData((preve)=>{
-      return{
-        ...preve,
-        productImage : [ ...preve.productImage, uploadImageCloudinary.url]
-      }
-    })
-  }
+    if (!file) {
+        toast.error("Please select an image!");
+        return;
+    }
+
+    const uploadResult = await uploadImage(file);
+
+    if (uploadResult.success) {
+        setData((prev) => ({
+            ...prev,
+            productImage: [...prev.productImage, uploadResult.url],  // ✅ Use `secure_url`
+        }));
+        toast.success("Image uploaded successfully!");
+    } else {
+        toast.error(uploadResult.error);
+    }
+};
+
 
   const handleDeleteProductImage = async(index)=>{
     console.log("image index",index)
@@ -157,15 +167,15 @@ const AdminEditProduct = ({
            </label> 
            <div>
                {
-                 data?.productImage[0] ? (
+                 data.productImage && data.productImage.length > 0 ? (
                      <div className='flex items-center gap-2'>
                          {
                            data.productImage.map((el,index)=>{
                              return(
-                               <div className='relative group'>
+                               <div key={index} className='relative group'>
                                    <img 
                                      src={el} 
-                                     alt={el} 
+                                     alt={`product ${index}`} 
                                      width={80} 
                                      height={80}  
                                      className='bg-slate-100 border cursor-pointer'  

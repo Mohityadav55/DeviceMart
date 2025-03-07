@@ -9,7 +9,7 @@ const resetPasswordController = async (req, res) => {
 
     try {
         // Verify token
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, process.env.TOKEN_SECRET_KEY);
         const user = await User.findOne({ _id: decoded.id });
 
         if (!user) {

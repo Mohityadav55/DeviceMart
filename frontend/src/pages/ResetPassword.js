@@ -27,7 +27,12 @@ const ResetPassword = () => {
     setLoading(true);
 
     try {
+      // console.log("token ",token);
+      
+      // console.log("token in reset password",SummaryApi.resetPassword.url(token));
       const response = await axios.post(SummaryApi.resetPassword.url(token), { newPassword, confirmPassword });
+      
+      // const response = await axios.post(SummaryApi.resetPassword.url(token), { newPassword, confirmPassword });
       setMessage(response.data.message);
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong!");

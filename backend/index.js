@@ -22,8 +22,12 @@ app.use(cors({
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: "Content-Type,Authorization"
 }));
-app.use(express.json());
 app.use(cookieParser());
+app.use(express.json());
+// app.use(cookieParser());
+
+app.use(express.urlencoded({ extended: true }));
+
 app.use("/api", router);
 
 const PORT = process.env.PORT || 8080;

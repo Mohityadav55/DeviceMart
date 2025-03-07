@@ -19,7 +19,8 @@ const UploadProduct = ({
     productImage : [],
     description : "",
     price : "",
-    sellingPrice : ""
+    sellingPrice : "",
+    productModelno : ""
   })
   const [openFullScreenImage,setOpenFullScreenImage] = useState(false)
   const [fullScreenImage,setFullScreenImage] = useState("")
@@ -186,6 +187,22 @@ const UploadProduct = ({
                   }
                   
               </div>
+              
+              
+              {/* <label htmlFor='productModelno' className='mt-3'>Product Model No :  </label> 
+                 <div>
+                 <input
+                 type='text' 
+                 id='productModelno' 
+                 placeholder='enter product model no' 
+                 value={data.brandName} 
+                 className='p-2 bg-slate-100 border rounded w-full'
+                 required
+                 />
+              </div> */}
+              
+                 
+                
 
               <label htmlFor='price' className='mt-3'>Price :</label>
               <input 
