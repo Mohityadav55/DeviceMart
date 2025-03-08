@@ -18,7 +18,11 @@
 
 // }
 
+
 // export default uploadImage 
+// console.log(process.env.REACT_APP_CLOUDINARY_URL);
+// console.log(process.env.REACT_APP_CLOUD_NAME);
+
 
 const uploadImage = async (image) => {
     const formData = new FormData();
@@ -27,7 +31,7 @@ const uploadImage = async (image) => {
 
     try {
         const response = await fetch(
-            "https://api.cloudinary.com/v1_1/defwhvzw6/image/upload",
+            `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
             {
                 method: "POST",
                 body: formData,
