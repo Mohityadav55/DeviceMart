@@ -31,7 +31,7 @@ const uploadImage = async (image) => {
 
     try {
         const response = await fetch(
-            `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
+            `https://api.cloudinary.com/v1_1/defwhvzw6/image/upload`,
             {
                 method: "POST",
                 body: formData,
