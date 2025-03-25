@@ -14,7 +14,7 @@ const connectDB = require('./config/db');
 const router = require('./routes');
 
 const app = express();
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = process.env.FRONTEND_URL;
 
 app.use(cors({
     origin: allowedOrigins,
