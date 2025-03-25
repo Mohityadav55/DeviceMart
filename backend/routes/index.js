@@ -73,4 +73,7 @@ router.post('/webhook',webhooks)  //  /api/webhook
 const orderController = require('../controller/order/orderController')
 router.get('/order-list',authToken,orderController)
 
+const allOrderController = require('../controller/order/allOrderController')
+router.get("/all-order",authToken,orderController)
+
 module.exports = router
