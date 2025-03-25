@@ -1,7 +1,5 @@
 
 const backendDomin = process.env.REACT_APP_BACKEND_URL 
-// console.log("All Environment Variables:", process.env);
-// console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL);
 
 // console.log("Cloudinary URL:", process.env.REACT_APP_CLOUDINARY_URL);
 // console.log("Cloud Name:", process.env.REACT_APP_CLOUD_NAME);
