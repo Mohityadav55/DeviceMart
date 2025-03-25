@@ -1,5 +1,5 @@
 
-const backendDomin = process.env.REACT_APP_BACKEND_URL || "http://localhost:8080"
+const backendDomin = process.env.REACT_APP_BACKEND_URL 
 // console.log("All Environment Variables:", process.env);
 // console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL);
 
