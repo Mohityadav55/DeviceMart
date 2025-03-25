@@ -98,11 +98,13 @@ const Header = () => {
                             )
                           }
 
-                          {
+                          <Link to={'/order'} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Order</Link>
+
+                          {/* {
                             user?.role === ROLE.GENERAL && (
                               <Link to={"/"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Home</Link>
                             )
-                          }
+                          } */}
                          
                         </nav>
                       </div>

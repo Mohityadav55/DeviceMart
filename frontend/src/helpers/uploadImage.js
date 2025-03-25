@@ -28,15 +28,22 @@ const uploadImage = async (image) => {
     const formData = new FormData();
     formData.append("file", image);
     formData.append("upload_preset", "mern_product");
+    
+    console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL);
 
+    console.log("Cloudinary URL:", process.env.REACT_APP_CLOUDINARY_URL);
+    console.log("Cloud Name:", process.env.REACT_APP_CLOUD_NAME);
     try {
         const response = await fetch(
-            `https://api.cloudinary.com/v1_1/defwhvzw6/image/upload`,
+            `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
             {
                 method: "POST",
                 body: formData,
             }
         );
+
+        console.log("Cloudinary Upload Response:", response);
+        
 
         const data = await response.json();
         // console.log("Cloudinary Upload Response:", data);

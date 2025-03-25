@@ -56,7 +56,6 @@ function App() {
         <ToastContainer 
           position='top-center'
         />
-        
         <Header/>
         <main className='min-h-[calc(100vh-120px)] pt-16'>
           <Outlet/>
@@ -85,10 +84,10 @@ export default App;
 // function App() {
 //   const dispatch = useDispatch();
 //   const [cartProductCount, setCartProductCount] = useState(0);
-//   const [cartItems, setCartItems] = useState([]); // ✅ Default to an empty array
+//   const [cartItems, setCartItems] = useState([]); // Default to an empty array
 
 
-//   // ✅ Fetch user details
+//   // Fetch user details
 //   const fetchUserDetails = async () => {
 //     const dataResponse = await fetch(SummaryApi.current_user.url, {
 //       method: SummaryApi.current_user.method,
@@ -102,7 +101,7 @@ export default App;
 //     }
 //   };
 
-//   // ✅ Fetch cart items
+//   //  Fetch cart items
 //   const fetchUserAddToCart = async () => {
 //     try {
 //       const dataResponse = await fetch(SummaryApi.addToCartProductView.url, {
@@ -113,8 +112,8 @@ export default App;
 //       const dataApi = await dataResponse.json();
 
 //       if (dataApi.success) {
-//         setCartItems(dataApi.data || []); // ✅ Always ensure cartItems is an array
-//         setCartProductCount(dataApi.data.length); // ✅ Update count
+//         setCartItems(dataApi.data || []); //  Always ensure cartItems is an array
+//         setCartProductCount(dataApi.data.length); //  Update count
 //       }
 //     } catch (error) {
 //       console.error("Error fetching cart items:", error);
@@ -122,8 +121,8 @@ export default App;
 //   };
 
 //   useEffect(() => {
-//     fetchUserDetails(); // ✅ Fetch user details on load
-//     fetchUserAddToCart(); // ✅ Fetch cart items on load
+//     fetchUserDetails(); //  Fetch user details on load
+//     fetchUserAddToCart(); //  Fetch cart items on load
 //   }, []);
 
 //   return (
@@ -132,8 +131,8 @@ export default App;
 //           fetchUserDetails, 
 //           cartProductCount, 
 //           fetchUserAddToCart,
-//           cartItems, // ✅ Provide cartItems in context
-//           setCartItems // ✅ Allow updates to cartItems
+//           cartItems, //  Provide cartItems in context
+//           setCartItems //  Allow updates to cartItems
 //       }}>
 //         <ToastContainer position='top-center' />
 //         <Header />

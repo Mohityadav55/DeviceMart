@@ -1,4 +1,10 @@
-const backendDomin =  process.env.REACT_BACKEND_URL // "http://localhost:8080"
+
+const backendDomin = process.env.REACT_APP_BACKEND_URL || "http://localhost:8080"
+// console.log("All Environment Variables:", process.env);
+// console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL);
+
+// console.log("Cloudinary URL:", process.env.REACT_APP_CLOUDINARY_URL);
+// console.log("Cloud Name:", process.env.REACT_APP_CLOUD_NAME);
 
 const SummaryApi = {
     signUP : {
@@ -87,7 +93,19 @@ const SummaryApi = {
     resetPassword: {
         url: (token) => `${backendDomin}/api/reset-password/${token}`, // Token is required
         method: "post"
-    }
+    },
+
+    // Added Payment API
+    payment : {
+       url : `${backendDomin}/api/checkout`,
+        method : 'post'
+    },
+
+    // Added Order List API
+    getOrder : {
+        url : `${backendDomin}/api/order-list`,
+        method : 'get'
+    },
 }
 
 
