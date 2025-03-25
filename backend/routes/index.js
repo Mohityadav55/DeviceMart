@@ -61,6 +61,16 @@ router.post("/forgot-password", forgotPasswordController);
 router.post("/reset-password/:token", resetPasswordController);
 
 
+// payment controller
+const paymentController = require('../controller/order/paymentController');
+router.post('/checkout',authToken,paymentController)
 
+// order && webhook controller
+
+const webhooks = require('../controller/order/webhook.js')
+router.post('/webhook',webhooks)  //  /api/webhook 
+
+const orderController = require('../controller/order/orderController')
+router.get('/order-list',authToken,orderController)
 
 module.exports = router
