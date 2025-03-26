@@ -90,6 +90,8 @@ const webhooks = async (req,res) => {
                     const deleteCartProduct = await addToCartModel.deleteMany({userId: session.metadata.userId})
                 }
 
+                // console.log('Cart Deleted:', deleteCartProduct);
+
                 break;
 
             default:

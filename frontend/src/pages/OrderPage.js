@@ -49,6 +49,7 @@ const OrderPage = () => {
                                                     return(
                                                         <div key={product.productId+index} className="flex gap-3 bg-slate-100" >
                                                             <img
+                                                            alt="productImage"
                                                             className="w-28 h-28 bg-slate-200 object-scale-down p-2"
                                                             src={product.image[0]}
                                                             />
@@ -87,8 +88,8 @@ const OrderPage = () => {
                                         </div>
                                     </div>
                                     
-                                    <div className="font-semibold ml-auto w-fit lg:text-lg min-w-[320px] ">
-                                        Total Amount:{item.totalAmount}
+                                    <div className="font-semibold ml-auto w-fit text-lg text-red-400 mt-1 lg:text-lg min-w-[320px] ">
+                                        Total Amount : {displayINRCurrency (item.totalAmount)}
                                     </div>
                                 </div>
                             </div>

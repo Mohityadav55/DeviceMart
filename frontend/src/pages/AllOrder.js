@@ -8,9 +8,17 @@ const AllOrder = () =>{
     const[data,setData] = useState([]);
         
         const fetchOrderDetails = async() => {
+
+            const token = localStorage.getItem("token");  
+
             const response = await fetch(SummaryApi.allOrder.url,{
                 method: SummaryApi.allOrder.method,
-                credentials: 'include'
+                credentials: 'include',
+                
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                }
             })
     
             const responseData = await response.json();
@@ -49,6 +57,7 @@ const AllOrder = () =>{
                                                             <div key={product.productId+index} className="flex gap-3 bg-slate-100" >
                                                                 <img
                                                                 className="w-28 h-28 bg-slate-200 object-scale-down p-2"
+                                                                alt="product"
                                                                 src={product.image[0]}
                                                                 />
                                                                 <div>

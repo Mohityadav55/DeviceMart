@@ -74,6 +74,6 @@ const orderController = require('../controller/order/orderController')
 router.get('/order-list',authToken,orderController)
 
 const allOrderController = require('../controller/order/allOrderController')
-router.get("/all-order",authToken,orderController)
+router.get("/all-order",authToken, allOrderController)
 
 module.exports = router
