@@ -56,7 +56,7 @@ const ResetPassword = () => {
           {/* New Password Field */}
           <div className="relative">
             <input
-              type={showPassword ? "text" : "password"} // 👁 Toggle visibility
+              type={showPassword ? "text" : "password"} //  Toggle visibility
               placeholder="New Password"
               className="w-full p-2 border rounded pr-10"
               value={newPassword}
@@ -65,16 +65,16 @@ const ResetPassword = () => {
             />
             <span
               className="absolute right-3 top-3 cursor-pointer text-gray-500"
-              onClick={() => setShowPassword(!showPassword)} // ✅ Toggle state
+              onClick={() => setShowPassword(!showPassword)} // 0 Toggle state
             >
-              {showPassword ? <FaEyeSlash /> : <FaEye />} {/* 👁 Icon changes */}
+              {showPassword ? <FaEyeSlash /> : <FaEye />} {/*  Icon changes */}
             </span>
           </div>
 
           {/* Confirm Password Field */}
           <div className="relative">
             <input
-              type={showConfirmPassword ? "text" : "password"} // 👁 Toggle visibility
+              type={showConfirmPassword ? "text" : "password"} //  Toggle visibility
               placeholder="Confirm Password"
               className="w-full p-2 border rounded pr-10"
               value={confirmPassword}
@@ -83,7 +83,7 @@ const ResetPassword = () => {
             />
             <span
               className="absolute right-3 top-3 cursor-pointer text-gray-500"
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)} // ✅ Toggle state
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)} //  Toggle state
             >
               {showConfirmPassword ? <FaEyeSlash /> : <FaEye />} {/* 👁 Icon changes */}
             </span>
