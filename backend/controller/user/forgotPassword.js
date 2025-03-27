@@ -36,12 +36,19 @@ const forgotPasswordController = async (req, res) => {
 
         // Send email
         const resetLink = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
-        await transporter.sendMail({
-            from: process.env.MAIL_USER,
-            to: user.email,
-            subject: "Password Reset Request",
-            text: `Click the link below to reset your password:\n\n${resetLink}\n\nThis link expires in 1 hour.`
-        });
+
+        setImmediate(async () => {
+            try {
+                await transporter.sendMail({
+                    from: process.env.MAIL_USER,
+                    to: user.email,
+                    subject: "Password Reset Request",
+                    text: `Click the link below to reset your password:\n\n${resetLink}\n\nThis link expires in 1 hour.`
+                });
+            } catch (error) {
+                console.error("Error sending email:", error.message);
+            }
+        })
 
         res.status(200).json({ message: "Password reset link sent to your email." });
 
