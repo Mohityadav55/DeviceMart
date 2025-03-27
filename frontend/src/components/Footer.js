@@ -19,7 +19,7 @@ const Footer = () => {
   const location = useLocation();
   
   // Apply absolute positioning only on the login page
-  const footerClass = location.pathname === "/login" 
+  const footerClass = location.pathname === "/login " 
     ? "absolute bottom-0 w-full bg-slate-200"
     : "bg-slate-200";
 
