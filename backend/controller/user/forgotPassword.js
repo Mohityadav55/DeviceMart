@@ -189,7 +189,7 @@ const forgotPasswordController = async (req, res) => {
                     from: process.env.MAIL_USER,
                     to: user.email,
                     subject: "Password Reset Request",
-                    text: `Click the link below to reset your password:\n\n${resetLink}\n\nThis link expires in 1 hour.`
+                   text: `Click the link below to reset your password:\n\n${resetLink}\n\nThis link expires in 1 hour.\n\nTime of Request: ${emailTime}`
                 });
                 console.log("Email sent - Time:", Date.now() - startTime, "ms");
 
