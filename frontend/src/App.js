@@ -53,14 +53,19 @@ function App() {
           cartProductCount, // current user add to cart product count,
           fetchUserAddToCart
       }}>
-        <ToastContainer 
-          position='top-center'
-        />
-        <Header/>
-        <main className='min-h-[calc(100vh-120px)] pt-16'>
+        <ToastContainer position='top-center' />
+        <div  className="flex flex-col min-h-screen">
+          <Header/>
+        <main className='min-h-[calc(100vh-120px)] flex-grow pt-16'>
           <Outlet/>
         </main>
         <Footer/>
+        </div>
+        {/* <Header/>
+        <main className='min-h-[calc(100vh-120px)] pt-16'>
+          <Outlet/>
+        </main>
+        <Footer/> */}
       </Context.Provider>
     </>
   );
