@@ -173,6 +173,7 @@ const forgotPasswordController = async (req, res) => {
         // Send email asynchronously using setImmediate
         setImmediate(async () => {
             try {
+                const emailTime = new Date().toLocaleString(); // Capture email sending time
                 console.log("Starting email sending...");
                 
                 const transporter = nodemailer.createTransport({
@@ -184,6 +185,7 @@ const forgotPasswordController = async (req, res) => {
                         pass: process.env.MAIL_PASS
                     }
                 });
+
 
                 await transporter.sendMail({
                     from: process.env.MAIL_USER,
